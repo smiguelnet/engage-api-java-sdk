@@ -1,2 +1,2 @@
-# engage-api-sdk
-SDK for Singular CK Engage API
+# engage-api-java-sdk
+Java SDK for Singular CK Engage API
