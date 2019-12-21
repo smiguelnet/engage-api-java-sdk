@@ -1,21 +1,15 @@
-package br.com.setia.engage.sdk.engagesdk.model.base;
-
+package br.com.setia.engage.sdk.engagesdk.api.message.person;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-
-import java.util.Date;
 
 @Data
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY, getterVisibility = JsonAutoDetect.Visibility.NONE, setterVisibility = JsonAutoDetect.Visibility.NONE)
-public abstract class BaseEntity {
+public class PersonRequestMessage {
 
-    private String id;
-    private boolean active;
+    @JsonProperty(value = "user_name")
+    private String userName;
 
-
-    private Date insertDate;
-
-
-    private Date updateDate;
+    private String email;
 }

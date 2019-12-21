@@ -2,7 +2,6 @@ package br.com.setia.engage.sdk.engagesdk.model.person;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -15,7 +14,7 @@ public class PersonProfileEvolution {
     private String level;
     private String operation;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+
     private Date date;
 
     private String description;
