@@ -23,6 +23,7 @@ public abstract class NetworkOperation {
     public static final String ENDPOINT_PERSON = "/person";
     public static final String ENDPOINT_VERSION = "/version";
     public static final String ENDPOINT_SETTINGS = "/settings";
+    public static final String ENDPOINT_REPORT = "/report";
     //endregion
 
     public NetworkOperation(Network network) {
@@ -58,10 +59,24 @@ public abstract class NetworkOperation {
         return new NetworkOperationException(String.format("Invalid return [%d] code for Engage API request. Expected: " + acceptedCodes, code));
     }
 
+    protected <T> T invokePostRequest(Request request, Class<T> modelType, int... acceptedCodes) throws NetworkOperationException {
+        try {
+            Response response = getHttpClient().newCall(request).execute();
+            if (checkAcceptedCodes(response.code(), acceptedCodes)) {
+                String responseContent = response.body().string();
+                return getMapper().readValue(responseContent, modelType);
+            }
+            throw getNetworkOperationExceptionUsingCode(response.code(), acceptedCodes);
+
+        } catch (IOException e) {
+            throw new NetworkOperationException(e.getMessage(), e);
+        }
+    }
+
     protected <T> T invokeGetRequest(Request request,
-                                            Class<T> modelType,
-                                            boolean parseJson,
-                                            int... acceptedCodes) throws NetworkOperationException {
+                                     Class<T> modelType,
+                                     boolean parseJson,
+                                     int... acceptedCodes) throws NetworkOperationException {
         try {
             Response response = getHttpClient().newCall(request).execute();
 
@@ -69,7 +84,7 @@ public abstract class NetworkOperation {
                 String responseContent = response.body().string();
 
                 if (parseJson) {
-                    return (T) getMapper().readValue(responseContent, modelType);
+                    return getMapper().readValue(responseContent, modelType);
                 }
                 return (T) responseContent;
             }
@@ -81,8 +96,8 @@ public abstract class NetworkOperation {
     }
 
     protected <T> List<T> invokeGetRequest(Request request,
-                                                  Class<T> modelType,
-                                                  int... acceptedCodes) throws NetworkOperationException {
+                                           Class<T> modelType,
+                                           int... acceptedCodes) throws NetworkOperationException {
         try {
             Response response = getHttpClient().newCall(request).execute();
 

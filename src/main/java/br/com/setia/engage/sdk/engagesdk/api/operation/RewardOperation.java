@@ -17,11 +17,6 @@ public class RewardOperation extends NetworkOperation {
 
     public List<Reward> getItems() throws NetworkOperationException {
         Request request = getBaseRequestBuilder(ENDPOINT_REWARD).build();
-        try {
-            return invokeGetRequest(request, Reward.class, HttpStatus.OK.value());
-
-        } catch (Exception e) {
-            throw new NetworkOperationException(e.getMessage(), e);
-        }
+        return invokeGetRequest(request, Reward.class, HttpStatus.OK.value());
     }
 }

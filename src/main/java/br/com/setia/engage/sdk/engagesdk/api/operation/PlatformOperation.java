@@ -15,21 +15,11 @@ public class PlatformOperation extends NetworkOperation {
 
     public String getVersion() throws NetworkOperationException {
         Request request = getBaseRequestBuilder(ENDPOINT_VERSION).build();
-        try {
-            return invokeGetRequest(request, String.class, false, HttpStatus.OK.value());
-
-        } catch (Exception e) {
-            throw new NetworkOperationException(e.getMessage(), e);
-        }
+        return invokeGetRequest(request, String.class, false, HttpStatus.OK.value());
     }
 
     public Settings getSettings() throws NetworkOperationException {
         Request request = getBaseRequestBuilder(ENDPOINT_SETTINGS).build();
-        try {
-            return invokeGetRequest(request, Settings.class, true, HttpStatus.OK.value());
-
-        } catch (Exception e) {
-            throw new NetworkOperationException(e.getMessage(), e);
-        }
+        return invokeGetRequest(request, Settings.class, true, HttpStatus.OK.value());
     }
 }

@@ -6,7 +6,10 @@ import br.com.setia.engage.sdk.engagesdk.api.message.trigger.TriggerResponseMess
 import br.com.setia.engage.sdk.engagesdk.api.operation.base.Network;
 import br.com.setia.engage.sdk.engagesdk.api.operation.base.NetworkOperation;
 import br.com.setia.engage.sdk.engagesdk.model.engine.Trigger;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import okhttp3.MediaType;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import org.springframework.http.HttpStatus;
 
 import java.util.List;
@@ -20,17 +23,21 @@ public class TriggerOperation extends NetworkOperation {
 
     public List<Trigger> getItems() throws NetworkOperationException {
         Request request = getBaseRequestBuilder(ENDPOINT_TRIGGER).build();
-        try {
-            return invokeGetRequest(request, Trigger.class, HttpStatus.OK.value());
-
-        } catch (Exception e) {
-            throw new NetworkOperationException(e.getMessage(), e);
-        }
+        return invokeGetRequest(request, Trigger.class, HttpStatus.OK.value());
     }
 
-    public TriggerResponseMessage invokeTrigger(TriggerRequestMessage requestMessage) {
-        //Request request = getBaseRequestBuilder(ENDPOINT_TRIGGER).build();
-        return null;
+    public TriggerResponseMessage invoke(TriggerRequestMessage requestMessage) throws NetworkOperationException {
+        String jsonContentToPost = null;
+        try {
+            jsonContentToPost = getMapper().writeValueAsString(requestMessage);
 
+        } catch (JsonProcessingException e) {
+            throw new IllegalArgumentException("Invalid request message format", e);
+        }
+
+        RequestBody requestBody = RequestBody.create(jsonContentToPost, MediaType.parse(org.springframework.http.MediaType.APPLICATION_JSON_VALUE));
+        Request request = getBaseRequestBuilder(ENDPOINT_TRIGGER).post(requestBody).build();
+
+        return invokePostRequest(request, TriggerResponseMessage.class, HttpStatus.CREATED.value(), HttpStatus.OK.value());
     }
 }
