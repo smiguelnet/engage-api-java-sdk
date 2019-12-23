@@ -61,258 +61,259 @@ class EngageSdkApplicationTests {
         //POST REQUEST
         TriggerResponseMessage response = triggerOperation.invoke(triggerRequestMessage);
         Assertions.assertNotNull(response);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_Registration() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("Registration");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_Login1Day() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("LoginOneTimeDay");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_LoginOneTimeWeek() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("LoginOneTimeWeek");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_AccountActivation() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("AccountActivation");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_OpenFirstStickersPack() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("OpenFirstStickersPack");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_OpenStickersPack() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("OpenStickersPack");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_PutSellOfferInMarketplace() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("PutSellOfferInMarketplace");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_PutBuyOfferInMarketplace() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("PutBuyOfferInMarketplace");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_FindFistRareInPack() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("FindFistRareInPack");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_FindFistEpicInPack() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("FindFistEpicInPack");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_FindFistLegendInPack() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("FindFistLegendInPack");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompletePersonalProfile() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompletePersonalProfile");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CreatePersonalCollection() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CreatePersonalCollection");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMoto3Riders() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMoto3Riders");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMoto3Bikes() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMoto3Bikes");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMoto3Actions() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMoto3Actions");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMoto2Riders() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMoto2Riders");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMoto2Bikes() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMoto2Bikes");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMoto2Actions() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMoto2Actions");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMotoGpRiders() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMotoGpRiders");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMotoGpBikes() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMotoGpBikes");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_ShareCollectionOnFacebookMotoGpActions() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("ShareCollectionOnFacebookMotoGpActions");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteFirstAlbum() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteFirstAlbum");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMoto3Riders() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMoto3Riders");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMoto3Bikes() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMoto3Bikes");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMoto3Actions() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMoto3Actions");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMoto2Riders() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMoto2Riders");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMoto2Bikes() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMoto2Bikes");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMoto2Actions() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMoto2Actions");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMotoGpRiders() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMotoGpRiders");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMotoGpBikes() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMotoGpBikes");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumMotoGpActions() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumMotoGpActions");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_Reach20TradesCompleted() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("Reach20TradesCompleted");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumCircuits() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumCircuits");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_CompleteAlbumLegends() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("CompleteAlbumLegends");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     @Test
     void testTrigger_Reach40TradesCompleted() throws NetworkOperationException {
         TriggerResponseMessage response = invokeGenericTrigger("Reach40TradesCompleted");
         Assertions.assertNotNull(response);
-        Assertions.assertEquals(response.getStatus(), STATUS_SUCCESS);
+        Assertions.assertEquals(response.getStatus().getCode(), STATUS_SUCCESS);
     }
 
     private TriggerResponseMessage invokeGenericTrigger(String triggerName) throws NetworkOperationException {
