@@ -14,9 +14,6 @@ public class TriggerRequest {
 
     private Trigger trigger;
     private Person person;
-
-
     private Date requestDate;
-
     private List<Map<String, Object>> attributes;
 }

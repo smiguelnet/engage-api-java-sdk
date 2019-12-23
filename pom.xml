@@ -6,12 +6,14 @@
     <groupId>br.com.setia.engage.sdk</groupId>
     <artifactId>engage-sdk</artifactId>
     <version>0.0.1</version>
+
     <name>engage-sdk</name>
     <description>Engage API SDK</description>
+    <url>https://singular-engage-api.herokuapp.com</url>
 
     <organization>
-        <name>Setia Tecnologia</name>
-        <url>https://www.setia.com.br</url>
+        <name>Singular CK</name>
+        <url>https://www.singularck.com</url>
     </organization>
 
     <developers>
@@ -28,12 +30,26 @@
         </developer>
     </developers>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <jdk.version>1.8</jdk.version>
+        <gpg.keyname>smiguelnet_appkey</gpg.keyname>
     </properties>
+
+    <scm>
+        <url>https://github.com/smiguelnet/engage-api-java-sdk</url>
+    </scm>
+
 
     <dependencies>
         <dependency>
@@ -143,30 +159,34 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>${project.version}</tagNameFormat>
+                    <releaseProfiles>release</releaseProfiles>
+                </configuration>
+            </plugin>
+
             <!--<plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-resources-plugin</artifactId>
-                 <version>3.1.0</version>
-                 <executions>
-                     <execution>
-                         <id>copy-artifact</id>
-                         <phase>deploy</phase>
-                         <goals>
-                             <goal>copy-resources</goal>
-                         </goals>
-                         <configuration>
-                             <outputDirectory>${project.basedir}/artifacts</outputDirectory>
-                             <resources>
-                                 <resource>
-                                     <directory>${project.basedir}/target/mvn-repo</directory>
-                                     <filtering>false</filtering>
-                                 </resource>
-                             </resources>
-                         </configuration>
-                     </execution>
-                 </executions>
-             </plugin>-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <keyname>${gpg.keyname}</keyname>
+                            <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
         </plugins>
     </build>
-
 </project>

@@ -10,6 +10,7 @@ public class TriggerGoal {
 
     private String name;
     private String message;
+
     @JsonProperty(value = "image_url")
     private String imageUrl;
 }

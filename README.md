@@ -3,7 +3,7 @@ The Java Engage Sdk library provides a simple way to integrate Engage API with y
 
 ## What is Engage API
 Engage API is product, composed by a set of endpoints that provide gamification features out of the box 
-that could be easily implemented in your application. 
+that could be easily integrated into your application. 
 
 ## Why use Engage Java SDK
 Using this Sdk your development effort will be minimal in order to implement whole features provided by Engage API.
@@ -16,7 +16,7 @@ Use [jitpack.io](https://jitpack.io)'s Maven repository:
 
 Step 1. Add the JitPack repository to your build file
 ```xml
-repositories>
+<repositories>
     <repository>
         <id>jitpack.io</id>
         <url>https://jitpack.io</url>
@@ -26,7 +26,7 @@ repositories>
 
 Step 2. Add the dependency
 ```xml
-dependency>
+<dependency>
     <groupId>com.github.smiguelnet</groupId>
     <artifactId>engage-api-java-sdk</artifactId>
     <version>1.0.0</version>

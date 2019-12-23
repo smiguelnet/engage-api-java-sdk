@@ -12,10 +12,6 @@ public abstract class BaseEntity {
 
     private String id;
     private boolean active;
-
-
     private Date insertDate;
-
-
     private Date updateDate;
 }
