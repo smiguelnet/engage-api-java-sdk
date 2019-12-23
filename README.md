@@ -15,7 +15,7 @@ Using this Sdk your development effort will be minimal in order to implement who
 Use [jitpack.io](https://jitpack.io)'s Maven repository:
 
 Step 1. Add the JitPack repository to your build file
-```
+```xml
 repositories>
     <repository>
         <id>jitpack.io</id>
@@ -25,7 +25,7 @@ repositories>
 ```
 
 Step 2. Add the dependency
-```
+```xml
 dependency>
     <groupId>com.github.smiguelnet</groupId>
     <artifactId>engage-api-java-sdk</artifactId>

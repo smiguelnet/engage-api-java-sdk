@@ -1,13 +1,13 @@
 # engage-api-java-sdk
 ## List available Rewards
-```
+```java
 Network network = Network.setDevelopment("Your-Customer-ID", "Your-Customer-KEY");
 RewardOperation rewardOperation = new RewardOperation(network);
 List<Reward> items = rewardOperation.getItems();
 ```
 
 ## List available Triggers
-```
+```java
 Network network = Network.setDevelopment("Your-Customer-ID", "Your-Customer-KEY");
 TriggerOperation triggerOperation = new TriggerOperation(network);
 List<Trigger> items = triggerOperation.getItems();
