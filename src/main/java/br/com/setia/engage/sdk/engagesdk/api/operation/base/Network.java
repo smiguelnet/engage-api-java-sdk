@@ -1,4 +1,4 @@
-package br.com.setia.engage.sdk.engagesdk.api.operation;
+package br.com.setia.engage.sdk.engagesdk.api.operation.base;
 
 import lombok.Data;
 

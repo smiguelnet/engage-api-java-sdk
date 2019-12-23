@@ -1,9 +1,10 @@
-package br.com.setia.engage.sdk.engagesdk.api.operation;
+package br.com.setia.engage.sdk.engagesdk.api.operation.base;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.http.HttpHeaders;
 import org.springframework.util.Base64Utils;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class NetworkCredentialsInterceptor implements Interceptor {
         this.network = network;
     }
 
-    private String setAuthorizationHeaderData() {
+    private String getAuthorizationHeaderData() {
         return new String(Base64Utils.encode((network.getApiCustomerId() + ":" + network.getApiCustomerKey()).getBytes()));
     }
 
@@ -24,7 +25,7 @@ public class NetworkCredentialsInterceptor implements Interceptor {
     public Response intercept(@NotNull Chain chain) throws IOException {
         Request currentRequest = chain.request();
         Request requestWithHeaders = currentRequest.newBuilder()
-                .addHeader("Authorization", setAuthorizationHeaderData())
+                .addHeader(HttpHeaders.AUTHORIZATION, getAuthorizationHeaderData())
                 .build();
         return chain.proceed(requestWithHeaders);
     }
