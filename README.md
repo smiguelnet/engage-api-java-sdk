@@ -33,7 +33,7 @@ Step 2. Add the dependency
 </dependency>
 ```
 
-The list of versions to install can be found in the [Releases](./releases) section. 
+The list of versions to install can be found in the [Releases](https://github.com/smiguelnet/engage-api-java-sdk/releases) section. 
 More information can be found in [jitpack.io docs](https://jitpack.io/docs/).
 
 ### JAR
